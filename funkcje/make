@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cc -Wall -std=c99 $1 -o $2 -lm
+chmod 777 $2
+./$2
