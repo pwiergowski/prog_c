@@ -1,43 +1,30 @@
 //zadanie 4.
 #include <stdio.h>
+#include <string.h>
 
-
-char * palindrom(int n)
+void odwracanie(int n , char * buforOut)
 {
+  	char buforInp[10];
 	int dlugosc = 0;
-	int tmpN = n;
-	while(tmpN > 0)
-	{
-		tmpN = tmpN / 10;
-		dlugosc++;
-	}
-
-	printf("dlugość %d \n",dlugosc);	
-	
-  	char buforInp[dlugosc];
-	char buforOut[dlugosc];
   	int i;
   
-  	snprintf(buforInp,dlugosc+1,"%d",n);
-  
+  	snprintf(buforInp,10+1,"%d",n);
+	dlugosc = strlen(buforInp);  
+
   	for(i = 0 ; i < dlugosc ; i++)
-    	{
-		printf("inp char at %d = %c \n",i,buforInp[dlugosc - 1 - i]);
+   	{
       		buforOut[i]=buforInp[dlugosc - 1 - i];
-		printf("out char at %d = %c \n",i,buforOut[i]);
     	}
-
-  	sscanf(buforOut,"%d",&i);
-
-  	return &buforOut;
 }
 
 int main()
 {
-  int a;
-  printf("podaj liczbę calkowitą\n");
-  scanf("%d",&a);
-  printf("Podana liczba: %d. Palindrom: %s\n",a,palindrom(a));
+	int a;
+	char buforOut[10];
+  	printf("Podaj liczbę calkowitą:");
+  	scanf("%d",&a);
+	odwracanie(a , buforOut);
+  	printf("Podana liczba: %d. odwrotnosc: %s\n",a,buforOut);
 
-  return 0;
+  	return 0;
 }
