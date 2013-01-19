@@ -40,7 +40,7 @@ int main()
   	for(int i = 0 ; i < 5 ; i++)
     	{
       		printf("\n");
-		a = losuj(1,10);
+			a = losuj(1,10);
       		b = losuj(1,10);
       		printf("Ile to jest %d * %d ?\n",a,b);
       		scanf("%d",&wynik);
